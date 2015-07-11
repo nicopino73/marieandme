@@ -6,6 +6,12 @@ class SessionsController < ApplicationController
 
   def create
     auth = request.env["omniauth.auth"]
+
+    unless ['nicolas.pineault@gmail.com'].include? auth['info']['email']
+      redirect_to root_url, :alert => "Access denied"
+      return
+    end
+
     user = User.where(:provider => auth['provider'],
                       :uid => auth['uid'].to_s).first || User.create_with_omniauth(auth)
     reset_session
@@ -21,5 +27,4 @@ class SessionsController < ApplicationController
   def failure
     redirect_to root_url, :alert => "Authentication error: #{params[:message].humanize}"
   end
-
 end
