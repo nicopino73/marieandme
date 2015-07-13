@@ -9,11 +9,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
-group :development, :test do
-  gem 'byebug'
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
-end
 gem 'bootstrap-sass'
 gem 'high_voltage'
 gem 'mysql2'
@@ -33,5 +28,6 @@ group :development do
   gem 'rails_layout'
 end
 group :production do
+  gem 'execjs'
   gem 'unicorn'
 end
