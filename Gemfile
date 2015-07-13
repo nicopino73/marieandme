@@ -29,5 +29,6 @@ group :development do
 end
 group :production do
   gem 'execjs'
+  gem 'therubyracer'
   gem 'unicorn'
 end
