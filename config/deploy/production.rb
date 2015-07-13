@@ -1,10 +1,10 @@
-set :stage, :production
+set :rails_env, :production
 
-set :rvm_ruby_version, '2.2.0@marieandme'
+set :rvm_ruby_version, '2.2.1@marieandme'
 
 set :deploy_to, '/home/web/apps/marieandnick'
 
-set :linked_files, %w{config/sunspot.yml config/database.yml config/unicorn/production.rb .env}
+set :linked_files, %w{config/secrets.yml config/database.yml config/unicorn/production.rb .env}
 
 # Simple Role Syntax
 # ==================
@@ -23,12 +23,13 @@ role :db,  %w{52.2.105.243}
 # extended properties on the server.
 server '52.2.105.243', user: 'web', roles: %w{web app}
 
+
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options
 # you can see them in [net/ssh documentation](http://net-ssh.github.io/net-ssh/classes/Net/SSH.html#method-c-start)
 # set it globally
 #  set :ssh_options, {
-#    keys: %w(/home/rlisowski/.ssh/id_rsa),
+#    keys: %w(/home/nicolaspineault/.ssh/marieandme.pem),
 #    forward_agent: false,
 #    auth_methods: %w(password)
 #  }

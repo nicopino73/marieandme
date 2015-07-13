@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.2.1'
 gem 'rails', '4.2.3'
 
 gem 'dotenv-rails', require: 'dotenv/rails-now'
@@ -26,6 +26,7 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rails', '~> 1.1.0'
   gem 'capistrano-rails-console'
+  gem 'capistrano3-unicorn'
   gem 'capistrano-rvm', '~> 0.1.1'
   gem 'hub', :require=>nil
   gem 'quiet_assets'
