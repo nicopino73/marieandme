@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   def create
     auth = request.env["omniauth.auth"]
 
-    unless ['nicolas.pineault@gmail.com'].include? auth['info']['email']
+    unless ['nicolas.pineault@gmail.com', 'mhsalaun74@gmail.com'].include? auth['info']['email']
       redirect_to root_url, :alert => "Access denied"
       return
     end
