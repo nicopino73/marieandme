@@ -10,4 +10,7 @@ class User < ActiveRecord::Base
     end
   end
 
+  def forem_name
+    name
+  end
 end
